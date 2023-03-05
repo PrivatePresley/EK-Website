@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  font-family: sans-serif;
+  font-size: 1.25rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: grey;
+}
+
+h3 {
+  padding: 10px;
+  color: white;
+  background-color: black;
+  font-size: 1rem;
+}
+
+#content {
+  font-size: 1rem;
+  padding-bottom: 2rem;
+}
+
+#nav-and-works {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: white;
+}
+
+#nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 5%;
+  border-bottom: 1px solid black;
+}
+
+#nav-name {
+  text-transform: uppercase;
+}
+
+button {
+  background: none;
+  border: 0px;
+  font: inherit;
+  padding: 0;
+}
+
+#hamburger-dropdown {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 290px;
+  height: 100vh;
+  background: black;
+  color: white;
+  opacity: 0;
+}
+
+#hamburger-list {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  text-transform: uppercase;
+  padding: 10rem 10%;
+}
+
+#main-div {
+  padding-top: 3.2rem;
+  padding: 5rem 5% 0 5%;
+}
+
+img {
+  width: 100%;
+}
+
+#picture-div {
+  position: relative;
+  z-index: -1;
+}
+
+figure {
+  padding: 0 0 2rem 0;
+  margin: 0;
+}
+
+figcaption {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+ul {
+  list-style: none;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  margin: 0;
+  padding: 1rem 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+#works-dropdown {
+  position: relative;
+  padding: 0 5%;
+  width: auto;
+  background: white;
+  z-index: 1;
+  display: none;
+}

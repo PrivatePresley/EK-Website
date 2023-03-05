@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>{{ site.siteTitle }}</title>
+  </head>
+  <body>
+    <div id="root">
+      <div id="container">
+        
+        <!-- Navigation and Works Modal -->
+        <div id="nav-and-works">
+          <div id="nav">
+            <div id="nav-name"><a href="/">{{site.siteTitle}}</a></div>
+            <div id="nav-works-button">
+              <button>Works</button>
+            </div>
+          </div>
+          <div id="works-dropdown">
+            <ul id="works-list">
+              {% for work in collections.works %}
+              <li><a href="{{work.url}}">{{ work.data.title}}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Hamburger Button and Modal -->
+        <div id="hamburger-dropdown">
+          <div id="hamburger-list">
+            <div>
+              <a>Link to a page</a>
+            </div>
+          </div>
+          <button>Hamburger Button</button>
+        </div>
+        
+        <!-- Page Content -->
+        <div id="main-div">
+          <main>
+            <div id="content">{{ content }}</div>
+            <div id="picture-div">
+              {% for filename in images %}
+              <figure>
+                
+                <picture><img src="{{filename}}"></picture>
+                
+              <figcaption>{{landing-caption}}</figcaption>
+              
+              </figure> 
+              {% endfor %}
+            </div>
+          </main>
+        </div>
+
+      </div>
+    
+    <!-- <button>
+      <svg width="28px" height="28px" viewBox="0 0 28 28">
+        <line x1="0" y1="6" x2="28" y2="6"></line>
+        <line x1="0" y1="14" x2="28" y2="14"></line>
+        <line x1="0" y1="14" x2="28" y2="14"></line>
+        <line x1="0" y1="22" x2="28" y2="22"></line>
+      </svg>
+    </button>
+    <button>
+      <svg width="28px" height="28px" viewBox="0 0 28 28">
+        <line x1="0" y1="6" x2="28" y2="6"></line>
+        <line x1="0" y1="14" x2="28" y2="14"></line>
+        <line x1="0" y1="14" x2="28" y2="14"></line>
+        <line x1="0" y1="22" x2="28" y2="22"></line>
+      </svg>
+    </button> -->
+  </body>
+</html>

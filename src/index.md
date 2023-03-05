@@ -1,5 +1,7 @@
 ---
-layout: home-layout.html
-pageTitle: Template
-pageClass: home
+layout: welling-layout.html
+title: Home Page
+images:
+  - /img/landing.jpg
+landing-caption: Slow Down / Don't Stop
 ---
