@@ -20,15 +20,8 @@ a:hover {
 }
 
 h3 {
-  padding: 10px;
-  color: white;
-  background-color: black;
-  font-size: 1rem;
-}
-
-#content {
-  font-size: 1rem;
-  padding-bottom: 2rem;
+  /* font-size: 1rem; */
+  text-transform: uppercase;
 }
 
 #nav-and-works {
@@ -36,25 +29,37 @@ h3 {
   width: 100%;
   top: 0px;
   left: 0px;
-  background-color: white;
 }
 
 #nav {
   display: flex;
   justify-content: space-between;
   padding: 1rem 5%;
-  border-bottom: 1px solid black;
+  background-color: white;
 }
 
 #nav-name {
   text-transform: uppercase;
 }
 
-button {
+#nav-line {
+  position: relative;
+  height: 1px;
+  background-color: black;
+  margin: 0 5%;
+  z-index: 2;
+}
+
+#works-button {
   background: none;
   border: 0px;
   font: inherit;
-  padding: 0;
+  padding: 0px;
+  cursor: pointer;
+}
+
+#works-button:hover {
+  color: grey;
 }
 
 #hamburger-dropdown {
@@ -66,6 +71,7 @@ button {
   background: black;
   color: white;
   opacity: 0;
+  visibility: hidden;
 }
 
 #hamburger-list {
@@ -77,8 +83,38 @@ button {
 }
 
 #main-div {
-  padding-top: 3.2rem;
-  padding: 5rem 5% 0 5%;
+  padding: 4rem 5% 0 5%;
+}
+
+#content {
+  /* font-size: 1rem; */
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.main-line {
+  height: 1px;
+  background-color: black;
+  margin-bottom: 2rem;
+}
+
+.arrow-left {
+  fill: none;
+  stroke-width: 1;
+  transform: rotate(-180deg);
+  stroke: black;
+  top: -4px;
+  right: 40px;
+  position: absolute;
+}
+
+.arrow-right {
+  fill: none;
+  stroke-width: 1;
+  stroke: black;
+  top: 0px;
+  right: 0px;
+  position: absolute;
 }
 
 img {
@@ -87,12 +123,30 @@ img {
 
 #picture-div {
   position: relative;
+}
+
+.move-to-back {
   z-index: -1;
+  transition: all 0.25s;
+}
+
+.hide {
+  display: none;
 }
 
 figure {
   padding: 0 0 2rem 0;
   margin: 0;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 figcaption {
@@ -108,15 +162,26 @@ ul {
   padding: 1rem 0;
   margin-block-start: 0;
   margin-block-end: 0;
-  border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
 
-#works-dropdown {
+.works-dropdown-open {
   position: relative;
   padding: 0 5%;
   width: auto;
   background: white;
-  z-index: 1;
-  display: none;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.25s;
+}
+
+.works-dropdown-close {
+  position: relative;
+  padding: 0 5%;
+  width: auto;
+  background: white;
+  opacity: 0;
+  transform: translateY(-5px);
+  visibility: hidden;
+  transition: all 0.25s;
 }

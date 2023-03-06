@@ -1,15 +1,18 @@
 ---
-title: Inverted Pyramids and Roads to Nowhere
+title: Inverted Pyramids and Roads to Nowhere, 2018
 images:
   - /img/inverted-pyramids-1.jpg
   - /img/inverted-pyramids-2.jpg
   - /img/inverted-pyramids-3.jpg
   - /img/inverted-pyramids-4.jpg
+pageClass: works
 ---
 
 ### {{title}}
 
-September 29 to December 29, 2018
-Central Gallery, Kamloops Art Gallery
+Kamloops Art Gallery, Curated by Charo Neville
 
-Curated by Charo Neville
+{% assign previousPost = collections.works | getPreviousCollectionItem %}
+{% assign nextPost = collections.works | getNextCollectionItem %}
+Previous: {{previousPost.url}}
+Next: {{nextPost.url}}

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <title>{{ site.siteTitle }}</title>
   </head>
-  <body>
+  <body class="{{pageClass}}">
     <div id="root">
       <div id="container">
         
@@ -14,11 +14,12 @@
         <div id="nav-and-works">
           <div id="nav">
             <div id="nav-name"><a href="/">{{site.siteTitle}}</a></div>
-            <div id="nav-works-button">
-              <button>Works</button>
+            <div>
+              <button type="button" id="works-button">Works</button>
             </div>
           </div>
-          <div id="works-dropdown">
+          <div id="nav-line"></div>
+          <div class="works-dropdown-close" id="works-dropdown">
             <ul id="works-list">
               {% for work in collections.works %}
               <li><a href="{{work.url}}">{{ work.data.title}}</a></li>
@@ -34,13 +35,31 @@
               <a>Link to a page</a>
             </div>
           </div>
-          <button>Hamburger Button</button>
+          <button type="button">Hamburger Button</button>
         </div>
         
         <!-- Page Content -->
         <div id="main-div">
           <main>
-            <div id="content">{{ content }}</div>
+            <div id="content">{{ content }}
+            <a class="arrow-left hide" href="{{ previousPost }}">
+                <svg width="32px" height="29px" viewBox="0 0 32 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <path d="M30.79785,14.5 L1.608435,14.5"></path>
+                  <polyline points="17 1 31 14.5 17 28"></polyline>
+                </svg>
+            </a>
+            <a href="{{ nextPost.url }}">
+              <div class="arrow-right hide">
+                <svg width="32px" height="29px" viewBox="0 0 32 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <path d="M30.79785,14.5 L1.608435,14.5"></path>
+                  <polyline points="17 1 31 14.5 17 28"></polyline>
+                </svg>
+              </div>
+            </a>
+            </div>
+            
+            <div class="main-line hide"></div>
+            
             <div id="picture-div">
               {% for filename in images %}
               <figure>
@@ -73,5 +92,6 @@
         <line x1="0" y1="22" x2="28" y2="22"></line>
       </svg>
     </button> -->
+    <script src="/js/scripts.js"></script>
   </body>
 </html>
