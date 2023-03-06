@@ -129,7 +129,6 @@ ul {
   padding-top: 4rem;
   position: relative;
   z-index: 1;
-  animation: fadeIn 0.75s;
 }
 
 #content h3,
@@ -178,7 +177,7 @@ img {
 figure {
   padding: 0 0 2rem 0;
   margin: 0;
-  /* animation: fadeIn 1s; */
+  animation: fadeIn 1s;
 }
 
 @keyframes fadeIn {
