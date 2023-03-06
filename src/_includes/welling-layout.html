@@ -13,44 +13,43 @@
         <!-- Navigation and Works Modal -->
         <div id="nav-and-works">
           <div id="nav">
-            <div id="nav-name"><a href="/">{{site.siteTitle}}</a></div>
-            <div>
-              <button type="button" id="works-button">Works</button>
+            <div id="nav-name"><a href="/">{{ site.siteTitle }}</a></div>
+            <div id="nav-buttons">
+              <div>
+                <button type="button" id="works-button">Works</button>
+              </div>
+              <div>
+                <button type="button" id="about-button">About</button>
+              </div>
             </div>
           </div>
           <div id="nav-line"></div>
           <div class="works-dropdown-close" id="works-dropdown">
             <ul id="works-list">
-              {% for work in collections.works %}
-              <li><a href="{{work.url}}">{{ work.data.title}}</a></li>
+              {% for work in collections.works reversed %}
+              <li><a class="works-link" href="{{work.url}}">{{ work.data.title }}</a></li>
               {% endfor %}
             </ul>
           </div>
         </div>
-
-        <!-- Hamburger Button and Modal -->
-        <div id="hamburger-dropdown">
-          <div id="hamburger-list">
-            <div>
-              <a>Link to a page</a>
-            </div>
-          </div>
-          <button type="button">Hamburger Button</button>
-        </div>
         
-        <!-- Page Content -->
         <div id="main-div">
           <main>
             <div id="content">{{ content }}
-            
-              {% assign previousPost = collections.works | getPreviousCollectionItem %}
+            <!-- these assigns are reveresed because of Eleventy's -->
+            <!-- default descending sorting... -->
+              {% assign previousPost = collections.works | getNextCollectionItem %}
+              {% if previousPost %}
               <a class="arrow-left hide" href="{{ previousPost.url }}">
                   <svg width="32px" height="29px" viewBox="0 0 32 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <path d="M30.79785,14.5 L1.608435,14.5"></path>
                     <polyline points="17 1 31 14.5 17 28"></polyline>
                   </svg>
               </a>
-              {% assign nextPost = collections.works | getNextCollectionItem %}
+              {% endif %}
+              
+              {% assign nextPost = collections.works | getPreviousCollectionItem %}
+              {% if nextPost %}
               <a href="{{ nextPost.url }}">
                 <div class="arrow-right hide">
                   <svg width="32px" height="29px" viewBox="0 0 32 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -59,6 +58,7 @@
                   </svg>
                 </div>
               </a>
+              {% endif %}
             </div>
             
             <div class="main-line hide"></div>
@@ -67,16 +67,16 @@
               {% for filename in images %}
               <figure>
                 
-                <picture><img src="{{filename}}"></picture>
-                
-              <figcaption>{{landing-caption}}</figcaption>
+                <picture><img src="{{ filename }}"></picture>
               
+              {% if landing-caption %}
+              <figcaption>{{ landing-caption }}</figcaption>
+              {% endif %}
               </figure> 
               {% endfor %}
             </div>
           </main>
         </div>
-
       </div>
     <script src="/js/scripts.js"></script>
   </body>

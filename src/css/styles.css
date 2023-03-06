@@ -45,6 +45,10 @@ h3 {
   text-transform: uppercase;
 }
 
+#nav-buttons {
+  display: flex;
+}
+
 #nav-line {
   position: relative;
   height: 1px;
@@ -65,24 +69,16 @@ h3 {
   color: grey;
 }
 
-#hamburger-dropdown {
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  width: 290px;
-  height: 100vh;
-  background: black;
-  color: white;
-  opacity: 0;
-  visibility: hidden;
+#about-button {
+  background: none;
+  border: 0px;
+  font: inherit;
+  padding: 0 0 0 20px;
+  cursor: pointer;
 }
 
-#hamburger-list {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  text-transform: uppercase;
-  padding: 10rem 10%;
+#about-button:hover {
+  color: grey;
 }
 
 #main-div {

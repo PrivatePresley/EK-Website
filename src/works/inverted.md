@@ -6,6 +6,7 @@ images:
   - /img/inverted-pyramids-3.jpg
   - /img/inverted-pyramids-4.jpg
 pageClass: works
+date: 2018-01-01
 ---
 
 ### {{title}}
