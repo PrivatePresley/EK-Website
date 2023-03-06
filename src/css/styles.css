@@ -148,7 +148,7 @@ ul {
   stroke-width: 1;
   transform: rotate(-180deg);
   stroke: black;
-  top: 70px;
+  top: 80px;
   right: 40px;
   position: absolute;
 }
@@ -157,7 +157,7 @@ ul {
   fill: none;
   stroke-width: 1;
   stroke: black;
-  top: 75px;
+  top: 84px;
   right: 0px;
   position: absolute;
 }
