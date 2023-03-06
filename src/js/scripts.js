@@ -1,11 +1,9 @@
 document.addEventListener("click", filterClicks);
 let worksDropdown = document.querySelector("#works-dropdown");
-let pictureDiv = document.querySelector("#picture-div");
-let contentDiv = document.querySelector("#content");
 let leftArrow = document.querySelector(".arrow-left");
 let rightArrow = document.querySelector(".arrow-right");
-let mainLine = document.querySelector(".main-line");
-let dropdownOpen = false;
+let mainLine = document.querySelector(".content-line");
+let openCommand = false;
 let animTime = 250;
 
 function filterClicks(e) {
@@ -38,23 +36,25 @@ function delayLink(e) {
 }
 
 //When Works is Clicked
-//Opacity and visibility changes for Works Dropdown
-//Z-Index changes for Content Divs
-//On close delayed by CSS transition time of .25s
+//Opacity and Visibility changes for Works Dropdown
+//On open, hide is removed (almost) immediately.
+//On close, display: none is delayed by CSS transition time of .25s
 function toggleWorks(e) {
-  dropdownOpen = !dropdownOpen;
-  if (e) {
-    e.preventDefault();
-  }
-  worksDropdown.classList.toggle("works-dropdown-open");
-  worksDropdown.classList.toggle("works-dropdown-close");
-  if (!dropdownOpen) {
+  e.preventDefault();
+
+  openCommand = !openCommand;
+
+  if (openCommand) {
+    worksDropdown.classList.remove("hide");
     setTimeout(() => {
-      pictureDiv.classList.toggle("move-to-back");
-      contentDiv.classList.toggle("move-to-back");
+      worksDropdown.classList.remove("close");
+      worksDropdown.classList.add("open");
+    }, 1);
+  } else if (!openCommand) {
+    worksDropdown.classList.remove("open");
+    worksDropdown.classList.add("close");
+    setTimeout(() => {
+      worksDropdown.classList.add("hide");
     }, animTime);
-  } else {
-    pictureDiv.classList.toggle("move-to-back");
-    contentDiv.classList.toggle("move-to-back");
   }
 }

@@ -6,3 +6,5 @@ images:
 landing-caption: Slow Down / Don't Stop
 pageClass: home
 ---
+
+{% assign randomImage = images | getRandom %}
