@@ -42,20 +42,23 @@
         <div id="main-div">
           <main>
             <div id="content">{{ content }}
-            <a class="arrow-left hide" href="{{ previousPost }}">
-                <svg width="32px" height="29px" viewBox="0 0 32 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <path d="M30.79785,14.5 L1.608435,14.5"></path>
-                  <polyline points="17 1 31 14.5 17 28"></polyline>
-                </svg>
-            </a>
-            <a href="{{ nextPost.url }}">
-              <div class="arrow-right hide">
-                <svg width="32px" height="29px" viewBox="0 0 32 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <path d="M30.79785,14.5 L1.608435,14.5"></path>
-                  <polyline points="17 1 31 14.5 17 28"></polyline>
-                </svg>
-              </div>
-            </a>
+            
+              {% assign previousPost = collections.works | getPreviousCollectionItem %}
+              <a class="arrow-left hide" href="{{ previousPost.url }}">
+                  <svg width="32px" height="29px" viewBox="0 0 32 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path d="M30.79785,14.5 L1.608435,14.5"></path>
+                    <polyline points="17 1 31 14.5 17 28"></polyline>
+                  </svg>
+              </a>
+              {% assign nextPost = collections.works | getNextCollectionItem %}
+              <a href="{{ nextPost.url }}">
+                <div class="arrow-right hide">
+                  <svg width="32px" height="29px" viewBox="0 0 32 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path d="M30.79785,14.5 L1.608435,14.5"></path>
+                    <polyline points="17 1 31 14.5 17 28"></polyline>
+                  </svg>
+                </div>
+              </a>
             </div>
             
             <div class="main-line hide"></div>
@@ -75,23 +78,6 @@
         </div>
 
       </div>
-    
-    <!-- <button>
-      <svg width="28px" height="28px" viewBox="0 0 28 28">
-        <line x1="0" y1="6" x2="28" y2="6"></line>
-        <line x1="0" y1="14" x2="28" y2="14"></line>
-        <line x1="0" y1="14" x2="28" y2="14"></line>
-        <line x1="0" y1="22" x2="28" y2="22"></line>
-      </svg>
-    </button>
-    <button>
-      <svg width="28px" height="28px" viewBox="0 0 28 28">
-        <line x1="0" y1="6" x2="28" y2="6"></line>
-        <line x1="0" y1="14" x2="28" y2="14"></line>
-        <line x1="0" y1="14" x2="28" y2="14"></line>
-        <line x1="0" y1="22" x2="28" y2="22"></line>
-      </svg>
-    </button> -->
     <script src="/js/scripts.js"></script>
   </body>
 </html>

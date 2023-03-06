@@ -11,8 +11,3 @@ pageClass: works
 ### {{title}}
 
 Kamloops Art Gallery, Curated by Charo Neville
-
-{% assign previousPost = collections.works | getPreviousCollectionItem %}
-{% assign nextPost = collections.works | getNextCollectionItem %}
-Previous: {{previousPost.url}}
-Next: {{nextPost.url}}

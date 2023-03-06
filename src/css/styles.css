@@ -20,8 +20,9 @@ a:hover {
 }
 
 h3 {
-  /* font-size: 1rem; */
+  font-size: 1.1rem;
   text-transform: uppercase;
+  font-weight: normal;
 }
 
 #nav-and-works {
@@ -33,9 +34,11 @@ h3 {
 
 #nav {
   display: flex;
+  position: relative;
   justify-content: space-between;
   padding: 1rem 5%;
   background-color: white;
+  z-index: 2;
 }
 
 #nav-name {
@@ -87,7 +90,7 @@ h3 {
 }
 
 #content {
-  /* font-size: 1rem; */
+  font-size: 1.1rem;
   padding-bottom: 2rem;
   position: relative;
 }
@@ -103,7 +106,7 @@ h3 {
   stroke-width: 1;
   transform: rotate(-180deg);
   stroke: black;
-  top: -4px;
+  top: -5px;
   right: 40px;
   position: absolute;
 }
