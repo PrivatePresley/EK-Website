@@ -112,6 +112,25 @@ ul {
   z-index: 1;
 }
 
+@media (min-width: 800px) {
+  #container {
+    padding: 0 10% 0 10%;
+  }
+
+  #nav {
+    padding: 1rem 10%;
+  }
+
+  #nav::after {
+    left: 10%;
+    width: 80%;
+  }
+
+  #works-dropdown {
+    padding: 0 10% 0 10%;
+  }
+}
+
 #works-dropdown.open {
   opacity: 1;
   visibility: visible;
