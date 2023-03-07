@@ -73,16 +73,14 @@
 
         <div class="content-line hide"></div>
 
-        <div id="picture-div">
-          {% for filename in images %}
+        <div id="landing-picture-div">
           <figure>
-            <picture><img src="{{ filename }}" /></picture>
+            <picture><img src="{{ image }}" /></picture>
 
             {% if landing-caption %}
             <figcaption>{{ landing-caption }}</figcaption>
             {% endif %}
           </figure>
-          {% endfor %}
         </div>
       </div>
     </div>

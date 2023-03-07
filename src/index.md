@@ -1,10 +1,7 @@
 ---
-layout: welling-layout.html
+layout: home-layout.html
 title: Home Page
-images:
-  - /img/landing.jpg
+image: /img/landing.jpg
 landing-caption: Slow Down / Don't Stop
 pageClass: home
 ---
-
-{% assign randomImage = images | getRandom %}

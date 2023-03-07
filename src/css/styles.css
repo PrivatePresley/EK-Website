@@ -72,6 +72,7 @@ h3 {
   font: inherit;
   padding: 0px;
   cursor: pointer;
+  color: black;
 }
 
 #works-button:hover {
@@ -84,6 +85,7 @@ h3 {
   font: inherit;
   padding: 0 0 0 40px;
   cursor: pointer;
+  color: black;
 }
 
 #about-button:hover {
@@ -126,7 +128,14 @@ ul {
 
 #content {
   font-size: 1.1rem;
-  padding-top: 4rem;
+  padding-top: 4.1rem;
+  position: relative;
+  z-index: 1;
+}
+
+#about-content {
+  font-size: 1.1rem;
+  padding-top: 3.7rem;
   position: relative;
   z-index: 1;
 }
@@ -157,13 +166,18 @@ ul {
   fill: none;
   stroke-width: 1;
   stroke: black;
-  top: 84px;
+  top: 87px;
   right: 0px;
   position: absolute;
 }
 
 img {
   width: 100%;
+}
+
+#landing-picture-div {
+  position: relative;
+  padding-top: 2rem;
 }
 
 #picture-div {
@@ -178,6 +192,10 @@ figure {
   padding: 0 0 2rem 0;
   margin: 0;
   animation: fadeIn 1s;
+}
+
+.about-figure {
+  padding: 2rem 0 0 0;
 }
 
 @keyframes fadeIn {

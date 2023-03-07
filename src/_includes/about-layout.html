@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>{{ site.siteTitle }}</title>
+  </head>
+  <body class="{{pageClass}}">
+    <div id="container">
+      <div id="nav-container">
+        <div id="nav">
+          <div id="nav-name"><a href="/">{{ site.siteTitle }}</a></div>
+          <div id="nav-buttons">
+            <div>
+              <button type="button" id="works-button">Works</button>
+            </div>
+            <div>
+              <a href="/about" id="about-button">About</a>
+            </div>
+          </div>
+        </div>
+        <div id="works-dropdown" class="close hide">
+          <ul id="works-list">
+            {% for work in collections.works reversed %}
+            <li>
+              <a class="works-link" href="{{work.url}}"
+                >{{ work.data.title }}</a
+              >
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <div id="about-content">
+        <div id="picture-div">
+          <figure class="about-figure">
+            <picture><img src="{{ image }}" /></picture>
+          </figure>
+        </div>
+
+        <div class="content-line"></div>
+
+        {{ content }}
+
+        <div class="content-line"></div>
+
+        <div style="display: flex; justify-content: space-evenly">
+          <a href="mailto:eleanor.king@gmail.com">Email</a>
+          <a href="https://www.instagram.com/darlakitty/" target="_blank"
+            >Instagram</a
+          >
+          <a href="https://wetdenim.bandcamp.com/" target="_blank">Bandcamp</a>
+        </div>
+      </div>
+    </div>
+    <script src="/js/scripts.js"></script>
+  </body>
+</html>
